@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+    </style>
+
+    <title>Encrypter</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="../resources/Vector.png" alt="Logo de Alura" class="aluraIcon">
+
+        <textarea name="input" id="input" class="input" placeholder="Ingrese el texto aquí"></textarea>
+
+        <p class="warningMessage">Solo letras minusculas y sin acentos
+            <span class="material-symbols-outlined">
+                info
+            </span>
+        </p>
+
+        <div class="actionButtons">
+
+            <button class="encrypt">Encriptar</button>
+            <button class="decrypt">Desencriptar</button>
+
+        </div>
+
+        <aside class="result">
+
+            <img src="../resources/Muñeco.png" alt="Imagen que representa que ningun mensaje ha sido procesado" class="messageNotFound">
+
+            <h2>Ningún mensaje fue encontrado</h2>
+
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+
+        </aside>
+
+    </div>
+
+</body>
+
+</html>
