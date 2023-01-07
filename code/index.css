@@ -11,8 +11,8 @@
 
     padding: 3%;
     display: grid;
-    grid-template-columns: 8% repeat(2, 1fr) 1.5fr;
-    grid-template-rows: repeat(5, auto);
+    grid-template-columns: 8% repeat(2, 1fr) 35%;
+    grid-template-rows: repeat(2, auto) 25px 80px auto;
     grid-template-areas:
         "logo . . result"
         ". input input result"
@@ -38,11 +38,9 @@
     resize: none;
     border: none;
     outline: none;
-    height: 450px;
+    min-height: 450px;
     margin-top: 30px;
-
     color: #0A3871;
-    ;
 
 }
 
@@ -90,6 +88,38 @@
 
 }
 
+.container .result .textResult {
+
+    word-wrap: break-word;
+    font-size: 25px;
+    margin: 30px;
+    margin-bottom: 0;
+    width: 80%;
+    text-align: left;
+    resize: none;
+    border: none;
+    outline: none;
+    height: 500px;
+
+}
+
+.container .result .btnCopy {
+
+    width: 80%;
+    margin: 20px 10%;
+    padding: 23px;
+    border-radius: 20px;
+    font-size: 15px;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    border-color: #0A3871;
+    cursor: pointer;
+    color: #0A3871;
+    background-color: #D8DFE8;
+
+}
+
 .container .warning {
 
     grid-area: warning;
@@ -111,7 +141,7 @@
 .container .encrypt,
 .container .decrypt {
 
-    padding: 23px 40px;
+    padding: 23px 0px;
     border-radius: 20px;
     font-size: 15px;
     text-align: center;
@@ -119,6 +149,7 @@
     border: solid;
     border-width: 1px;
     border-color: #0A3871;
+    cursor: pointer;
 
 }
 
@@ -127,6 +158,14 @@
     grid-area: encrypt;
     color: #D8DFE8;
     background-color: #0A3871;
+
+}
+
+.container .decrypt {
+
+    grid-area: decrypt;
+    color: #0A3871;
+    background-color: #D8DFE8;
 
 }
 
@@ -151,7 +190,7 @@
 
 }
 
-.container .information #socialLink {
+.container .information ul li {
 
     display: flex;
     align-items: center;
@@ -179,14 +218,6 @@
 
 }
 
-.container .decrypt {
-
-    grid-area: decrypt;
-    color: #0A3871;
-    background-color: #D8DFE8;
-
-}
-
 @media screen and (max-width: 768px) {
 
     .container {
@@ -210,9 +241,15 @@
     
     }
 
+    .container .result h2,
+    .container .result p {
+
+        margin: 20px;
+
+    }
+
     .container .result {
 
-        padding: 30px;
         margin-left: 0;
     
     }
