@@ -9,7 +9,7 @@ class="messageNotFound">
 <h2>Ningún mensaje fue encontrado</h2>
 <p>Ingresa el texto que desees encriptar o desencriptar</p>`
 
-const htmlButton = "<button class='btnCopy'>Copiar</button>";
+const htmlButton = "<button class='btnCopy' onclick='copy()'>Copiar</button>";
 
 const conversion = {
 
@@ -28,6 +28,7 @@ encryptButton.onclick = () => {
     let texto = inputArea.value;
     if (validarTexto(texto)) {
         resultArea.innerHTML = `<textarea class='textResult' disabled>${encriptarTexto(texto)}</textarea>${htmlButton}`;
+        inputArea.value = "";
     } else {
         resultArea.innerHTML = messageNotFound;
     }
@@ -39,9 +40,38 @@ decryptButton.onclick = () => {
     let texto = inputArea.value;
     if (validarTexto(texto)) {
         resultArea.innerHTML = `<textarea class='textResult' disabled>${desencriptarTexto(texto)}</textarea>${htmlButton}`;
+        inputArea.value = "";
     } else {
         resultArea.innerHTML = messageNotFound;
     }
+
+}
+
+function copy() {
+
+    const textResult = document.querySelector(".textResult");
+    if (textResult) {
+
+        textResult.select();
+        navigator.clipboard.writeText(textResult.value);
+
+        cambiarEstiloBotonCopiar();
+    }
+
+}
+
+function cambiarEstiloBotonCopiar() {
+
+    let buttonCopy = document.querySelector(".btnCopy");
+    buttonCopy.textContent = "Copiado";
+    buttonCopy.classList.add("copiarPresionado");
+
+    setTimeout(() => {
+
+        buttonCopy.textContent = "Copiar";
+        buttonCopy.classList.remove("copiarPresionado");
+
+    }, 1000);
 
 }
 

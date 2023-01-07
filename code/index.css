@@ -138,6 +138,13 @@
 
 }
 
+.container .result .copiarPresionado {
+
+    background-color: #0A3871;
+    color: #D8DFE8;
+
+}
+
 .container .warning {
 
     grid-area: warning;
