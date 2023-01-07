@@ -12,12 +12,13 @@
     padding: 3%;
     display: grid;
     grid-template-columns: 8% repeat(2, 1fr) 1.5fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
     grid-template-areas:
         "logo . . result"
         ". input input result"
         ". warning warning result"
-        ". encrypt decrypt result";
+        ". encrypt decrypt result"
+        "footer footer footer footer";
     column-gap: 2%;
     row-gap: 20px;
 
@@ -129,6 +130,55 @@
 
 }
 
+.container .information {
+
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #0A3871;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+
+.container .information * {
+
+    background-color: transparent;
+    color: #D8DFE8;
+    margin: 3px;
+
+}
+
+.container .information #socialLink {
+
+    display: flex;
+    align-items: center;
+    margin: 0;
+    text-decoration: none;
+
+}
+
+.container .information p a {
+
+    text-decoration: none;
+
+}
+
+.container .information p {
+
+    margin-bottom: 20px;
+
+}
+
+#icon {
+
+    width: 30px;
+    margin-right: 10px;
+
+}
+
 .container .decrypt {
 
     grid-area: decrypt;
@@ -143,13 +193,14 @@
 
         padding: 7%;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 100px repeat(4, auto);
+        grid-template-rows: 100px repeat(5, auto);
         grid-template-areas:
             "logo ."
             "input input"
             "warning warning"
             "encrypt decrypt"
-            "result result";
+            "result result"
+            "footer footer";
 
     }
 
@@ -162,6 +213,7 @@
     .container .result {
 
         padding: 30px;
+        margin-left: 0;
     
     }
 
@@ -173,14 +225,15 @@
 
         padding: 5%;
         grid-template-columns: 1fr;
-        grid-template-rows: 70px repeat(5, auto);
+        grid-template-rows: 70px repeat(6, auto);
         grid-template-areas:
             "logo"
             "input"
             "warning"
             "encrypt"
             "decrypt"
-            "result";
+            "result"
+            "footer";
 
     }
 
