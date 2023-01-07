@@ -11,13 +11,13 @@
 
     padding: 3%;
     display: grid;
-    grid-template-columns: 13% repeat(3, 1fr);
+    grid-template-columns: 8% repeat(2, 1fr) 1.5fr;
     grid-template-rows: repeat(4, auto);
     grid-template-areas:
-    "logo . . result"
-    ". input input result"
-    ". warning warning result"
-    ". encrypt decrypt result";
+        "logo . . result"
+        ". input input result"
+        ". warning warning result"
+        ". encrypt decrypt result";
     column-gap: 2%;
     row-gap: 20px;
 
@@ -27,7 +27,7 @@
 
     grid-area: logo;
     width: 25px;
-    margin-left: 40px;
+    margin-left: 8%;
 
 }
 
@@ -40,7 +40,8 @@
     height: 450px;
     margin-top: 30px;
 
-    color: #0A3871;;
+    color: #0A3871;
+    ;
 
 }
 
@@ -70,6 +71,7 @@
     justify-content: center;
     margin-left: 5%;
     gap: 20px;
+    box-shadow: 0px 0px 20px 3px rgb(197, 197, 197);
 
 }
 
@@ -132,5 +134,54 @@
     grid-area: decrypt;
     color: #0A3871;
     background-color: #D8DFE8;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+
+        padding: 7%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100px repeat(4, auto);
+        grid-template-areas:
+            "logo ."
+            "input input"
+            "warning warning"
+            "encrypt decrypt"
+            "result result";
+
+    }
+
+    .container .result img {
+
+        display: none;
     
+    }
+
+    .container .result {
+
+        padding: 30px;
+    
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .container {
+
+        padding: 5%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px repeat(5, auto);
+        grid-template-areas:
+            "logo"
+            "input"
+            "warning"
+            "encrypt"
+            "decrypt"
+            "result";
+
+    }
+
 }
