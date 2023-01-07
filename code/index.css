@@ -92,21 +92,39 @@
 
     word-wrap: break-word;
     font-size: 25px;
-    margin: 30px;
-    margin-bottom: 0;
     width: 80%;
     text-align: left;
     resize: none;
     border: none;
     outline: none;
-    height: 500px;
+    height: 530px;
 
+}
+
+.container .result .textResult::-webkit-scrollbar,
+.container .input::-webkit-scrollbar {
+    width: 7px;
+}
+
+.container .result .textResult::-webkit-scrollbar-track,
+.container .input::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.container .result .textResult::-webkit-scrollbar-thumb,
+.container .input::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.container .result .textResult::-webkit-scrollbar-thumb:hover,
+.container .input::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .container .result .btnCopy {
 
     width: 80%;
-    margin: 20px 10%;
+    margin-top: 15px;
     padding: 23px;
     border-radius: 20px;
     font-size: 15px;
@@ -141,6 +159,7 @@
 .container .encrypt,
 .container .decrypt {
 
+    outline: none;
     padding: 23px 0px;
     border-radius: 20px;
     font-size: 15px;
@@ -238,7 +257,7 @@
     .container .result img {
 
         display: none;
-    
+
     }
 
     .container .result h2,
@@ -251,7 +270,23 @@
     .container .result {
 
         margin-left: 0;
-    
+        padding: 35px;
+        gap: 30px;
+
+    }
+
+    .container .result .textResult,
+    .container .result .btnCopy {
+
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .container .result .textResult {
+
+        height: 300px;
+
     }
 
 }

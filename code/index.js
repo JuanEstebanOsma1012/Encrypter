@@ -27,14 +27,9 @@ encryptButton.onclick = () => {
 
     let texto = inputArea.value;
     if (validarTexto(texto)) {
-
-        resultArea.innerHTML = `<textarea class='textResult'>${encriptarTexto(texto)}</textarea>${htmlButton}`;
-        resultArea.style.justifyContent = "space-between";
-
+        resultArea.innerHTML = `<textarea class='textResult' disabled>${encriptarTexto(texto)}</textarea>${htmlButton}`;
     } else {
-
         resultArea.innerHTML = messageNotFound;
-
     }
 
 }
@@ -43,24 +38,15 @@ decryptButton.onclick = () => {
 
     let texto = inputArea.value;
     if (validarTexto(texto)) {
-
-        resultArea.innerHTML = `<textarea>${desencriptarTexto(texto)}</textarea>${htmlButton}`;
-
+        resultArea.innerHTML = `<textarea class='textResult' disabled>${desencriptarTexto(texto)}</textarea>${htmlButton}`;
     } else {
-
         resultArea.innerHTML = messageNotFound;
-
     }
 
 }
 
 function validarTexto(texto) {
-
-    if (texto !== "") {
-        return true;
-    }
-
-    return false;
+    return texto !== "";
 }
 
 function encriptarTexto(texto) {
@@ -70,13 +56,9 @@ function encriptarTexto(texto) {
 
         let element = texto[i];
         if (Object.keys(conversion).indexOf(element) !== -1) {
-
             auxText += conversion[element];
-
         } else {
-
             auxText += element;
-
         }
     }
 
@@ -94,7 +76,6 @@ function desencriptarTexto(texto) {
     })
 
     return texto;
-
 }
 
 function getKeyByValue(object, value) {
