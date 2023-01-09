@@ -12,7 +12,7 @@
     padding: 3%;
     display: grid;
     grid-template-columns: 8% repeat(2, 1fr) 35%;
-    grid-template-rows: repeat(2, auto) 25px 80px auto;
+    grid-template-rows: 70px auto 25px 80px auto;
     grid-template-areas:
         "logo . . result"
         ". input input result"
@@ -28,7 +28,6 @@
 
     grid-area: logo;
     width: 25px;
-    margin-left: 8%;
 
 }
 
@@ -38,8 +37,7 @@
     resize: none;
     border: none;
     outline: none;
-    min-height: 450px;
-    margin-top: 30px;
+    height: 450px;
     color: #0A3871;
 
 }
@@ -56,8 +54,6 @@
     font-size: 30px;
 
 }
-
-
 
 .container .result {
 
@@ -78,7 +74,7 @@
 
     background-color: transparent;
     text-align: center;
-    margin: 0 30px;
+    margin: 0 10%;
 
 }
 
@@ -90,7 +86,7 @@
 
 .container .result .textResult {
 
-    word-wrap: break-word;
+    word-break: break-all;
     font-size: 25px;
     width: 80%;
     text-align: left;
@@ -101,6 +97,46 @@
 
 }
 
+.container .result .btnCopy {
+
+    width: 80%;
+    margin-top: 15px;
+
+}
+
+.container .decrypt,
+.container .result .btnCopy {
+
+    color: #0A3871;
+    background-color: #D8DFE8;
+
+}
+
+.container .encrypt,
+.container .decrypt,
+.container .result .btnCopy {
+
+    outline: none;
+    padding: 23px;
+    border-radius: 20px;
+    font-size: 15px;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    border-color: #0A3871;
+    cursor: pointer;
+
+}
+
+.container .result .copiarPresionado,
+.container .encrypt {
+
+    background-color: #0A3871;
+    color: #D8DFE8;
+
+}
+
+/* editar la apariencia de la barra de scroll para hacerla menos invasiva y mas estetica*/
 .container .result .textResult::-webkit-scrollbar,
 .container .input::-webkit-scrollbar {
     width: 7px;
@@ -121,30 +157,6 @@
     background: #555;
 }
 
-.container .result .btnCopy {
-
-    width: 80%;
-    margin-top: 15px;
-    padding: 23px;
-    border-radius: 20px;
-    font-size: 15px;
-    text-align: center;
-    border: solid;
-    border-width: 1px;
-    border-color: #0A3871;
-    cursor: pointer;
-    color: #0A3871;
-    background-color: #D8DFE8;
-
-}
-
-.container .result .copiarPresionado {
-
-    background-color: #0A3871;
-    color: #D8DFE8;
-
-}
-
 .container .warning {
 
     grid-area: warning;
@@ -152,7 +164,7 @@
     align-items: center;
     justify-content: start;
     font-size: 13px;
-    margin-bottom: -8px;
+    margin-bottom: -25px;
     color: rgb(67, 67, 67);
 
 }
@@ -163,37 +175,19 @@
 
 }
 
-.container .encrypt,
-.container .decrypt {
-
-    outline: none;
-    padding: 23px 0px;
-    border-radius: 20px;
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 5px;
-    border: solid;
-    border-width: 1px;
-    border-color: #0A3871;
-    cursor: pointer;
-
-}
-
 .container .encrypt {
 
     grid-area: encrypt;
-    color: #D8DFE8;
-    background-color: #0A3871;
 
 }
 
 .container .decrypt {
 
     grid-area: decrypt;
-    color: #0A3871;
-    background-color: #D8DFE8;
-
+    
 }
+
+
 
 .container .information {
 
@@ -212,16 +206,16 @@
 
     background-color: transparent;
     color: #D8DFE8;
-    margin: 3px;
 
 }
 
-.container .information ul li {
+.container .information ul *{
 
     display: flex;
     align-items: center;
-    margin: 0;
+    gap: 10px;
     text-decoration: none;
+    margin: 3px 0;
 
 }
 
@@ -237,10 +231,17 @@
 
 }
 
+.container .information ul li a:hover,
+.container .information p a:hover {
+
+    color: #bfc816;
+    font-weight: 600;
+
+}
+
 #icon {
 
     width: 30px;
-    margin-right: 10px;
 
 }
 
@@ -250,7 +251,7 @@
 
         padding: 7%;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 100px repeat(5, auto);
+        grid-template-rows: 90px auto 25px 80px auto auto;
         grid-template-areas:
             "logo ."
             "input input"
@@ -267,18 +268,12 @@
 
     }
 
-    .container .result h2,
-    .container .result p {
-
-        margin: 20px;
-
-    }
-
     .container .result {
 
         margin-left: 0;
         padding: 35px;
         gap: 30px;
+        justify-content: space-around;
 
     }
 
@@ -290,7 +285,8 @@
 
     }
 
-    .container .result .textResult {
+    .container .result .textResult,
+    .container .input {
 
         height: 300px;
 
@@ -304,7 +300,7 @@
 
         padding: 5%;
         grid-template-columns: 1fr;
-        grid-template-rows: 70px repeat(6, auto);
+        grid-template-rows: 70px auto 25px repeat(2, 80px) auto;
         grid-template-areas:
             "logo"
             "input"
